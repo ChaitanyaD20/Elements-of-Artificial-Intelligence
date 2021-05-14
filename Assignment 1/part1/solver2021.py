@@ -1,7 +1,3 @@
-#
-# Based on skeleton code by D. Crandall, January 2021
-#
-
 import sys
 import numpy
 import heapq
@@ -57,18 +53,7 @@ def downRotate(lists, col):
 def printable_board(board):
     return [('%3d ') * COLS % board[j:(j + COLS)] for j in range(0, ROWS * COLS, COLS)]
 
-'''
-def heuristic(next_state):
-    manhattan_dist = 0
-    goal_dict = {1: [0, 0], 2: [0, 1], 3: [0, 2], 4: [0, 3], 5: [0, 4],
-                 6: [1, 0], 7: [1, 1], 8: [1, 2], 9: [1, 3], 10: [1, 4],
-                 11: [2, 0], 12: [2, 1], 13: [2, 2], 14: [2, 3], 15: [2, 4],
-                 16: [3, 0], 17: [3, 1], 18: [3, 2], 19: [3, 3], 20: [3, 4]}
-    for k in range(0, len(next_state)):
-        manhattan_dist = manhattan_dist + abs(goal_dict[next_state[k]][0] - k // COLS) + abs(
-            goal_dict[next_state[k]][1] - k % COLS)
-    return manhattan_dist//4  #(/4 for admissable heuristic)
-'''
+
 def heuristic(next_state):
     mismatched = 0
     for i in range(0, len(next_state)):
